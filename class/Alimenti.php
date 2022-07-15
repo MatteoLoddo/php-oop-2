@@ -1,9 +1,18 @@
 <?php
 require_once __DIR__ . "/Prodotto.php";
 
-class Alimenti extends Prodotto
+class Alimento extends Prodotto
 {
   private $scadenza;
+
+
+  public function __construct($_nome, $_prezzo , $_scadenza)
+  {
+
+    parent::__construct($_nome , $_prezzo);
+
+    $this->setScadenza($_scadenza);
+  }
 
   /**
    * Get the value of scadenza

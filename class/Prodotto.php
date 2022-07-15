@@ -4,6 +4,14 @@ class Prodotto{
   private $nome;
   private $peso;
   private float $prezzo;
+
+
+  public function __construct($_nome, $_prezzo)
+  {
+    $this->setNome($_nome);
+    $this->setPrezzo($_prezzo);
+    
+  }
   /**
    * Get the value of nome
    */

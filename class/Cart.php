@@ -1,15 +1,13 @@
 <?php
+require_once __DIR__ ."/Prodotto.php";
 class Carrello
 {
   private $prodotti =[];
 
-  public function addCarrello($prodotto){
-  $this->prodotti[] = $prodotto;
+  public function addCarrello($_prodotto){
+  $this->prodotti[] = $_prodotto;
   }
 
-  public function removeCarrello($prodotti){
-    
-  }
 
 
   /**
@@ -20,6 +18,13 @@ class Carrello
     return $this->prodotti;
   }
 
+  public function getTotale($_sconto = 0){
+    $totale = 0;
+
+    foreach ( $this->prodotti as $prodotto){
+      $totale += $prodotto->getPrezzo();
+    }return $totale;
+  }
 }
 
 ?>
