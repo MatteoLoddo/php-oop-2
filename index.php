@@ -10,16 +10,15 @@ $gioco = new Giochi();
 $user = new User();
 
 
-$alimento->setNome("Crocchette")->setScadenza(1020222)->setMarca("PetsLover")->setPeso("2kg")->setAnimale("Cane")->setPrezzo("20$");
-$gioco->setNome("Palla")->setTipo("divertimento")->setMarca("PetsLover")->setPeso("0.5kg")->setAnimale("Cane")->setPrezzo("5$");
-$user->setNome("Mario")->setCognome("Rossi")->setRegistrato(true);
+$alimento->setNome("Crocchette")->setPeso(2 . "Kg")->setPrezzo(15 )->setScadenza("10/05/2023");
+$gioco->setNome("Palla")->setPeso(0.3 . "Kg")->setPrezzo(5 );
+$user->setRegistered("Mario","Rossi");
 
-if($user->registrato == true){
-  $alimento->sconto = 20;
-  $gioco->sconto = 20;
-}
 
-var_dump($alimento, $gioco, $user);
+
+
+
+var_dump($user);
 ?>
 
 <!DOCTYPE html>

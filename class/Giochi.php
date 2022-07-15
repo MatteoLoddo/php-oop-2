@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/prodotto.php";
+require_once __DIR__ . "/Prodotto.php";
 
 class Giochi extends Prodotto{
 

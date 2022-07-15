@@ -1,9 +1,25 @@
 <?php
-
-class User{
+require_once __DIR__ . "/Prodotto.php";
+require_once __DIR__ . "/Cart.php";
+class User {
   private $nome;
   private $cognome;
-  public $registrato;
+  public bool $registrato = false;
+  public Carrello $cart;
+
+
+  function __construct($_nome = null,$_cognome = null)
+
+  {
+
+    $this->cart = new Carrello();
+    // se vengono passati nome e cognome, lutente e registrato
+    // altrimenti no
+    if(isset($_nome) && isset($_cognome)){
+    $this->setRegistered($_nome,$_cognome);
+    }
+  }
+
 
   /**
    * Get the value of nome
@@ -52,13 +68,22 @@ class User{
   /**
    * Set the value of registrato
    */
-  public function setRegistrato($registrato): self
+  private function setRegistrato($registrato): self
   {
     $this->registrato = $registrato;
 
     return $this;
   }
+
+  public function setRegistered($_nome, $_cognome){
+    $this->setNome($_nome);
+      $this->setCognome($_cognome);
+      $this->setRegistrato(true);
+
+  }
+
 }
+
 
 
 ?>
